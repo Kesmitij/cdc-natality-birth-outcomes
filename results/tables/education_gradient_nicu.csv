@@ -1,0 +1,8 @@
+outcome,stratifier,level,n,events,rate_per_100,education_order
+nicu,education,Less than HS,3996295,396276,9.916084773521474,0
+nicu,education,HS / GED,8641776,857454,9.922196548487255,1
+nicu,education,Some college,6272436,621303,9.905290384788302,2
+nicu,education,Associate,2755418,259304,9.410695582303665,3
+nicu,education,Bachelor's,7037454,583600,8.292771789343135,4
+nicu,education,Graduate,4265296,357284,8.376534711776157,5
+nicu,education,Missing,497969,57470,11.540879050703959,99

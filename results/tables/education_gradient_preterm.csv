@@ -1,0 +1,8 @@
+outcome,stratifier,level,n,events,rate_per_100,education_order
+preterm,education,Less than HS,3996122,458223,11.466691957853138,0
+preterm,education,HS / GED,8645337,962277,11.13058981969124,1
+preterm,education,Some college,6276233,678645,10.812935083831336,2
+preterm,education,Associate,2757497,286839,10.402150936156957,3
+preterm,education,Bachelor's,7042824,599281,8.509100894754718,4
+preterm,education,Graduate,4268722,364657,8.542533339018094,5
+preterm,education,Missing,498174,63980,12.842902279123358,99

@@ -1,0 +1,6 @@
+outcome,stratifier,level,n,events,rate_per_100,pnc_order
+lbw,pnc_timing,1st trimester,25250784,1990143,7.881509738469902,0
+lbw,pnc_timing,2nd trimester,5360863,482542,9.001199993359279,1
+lbw,pnc_timing,3rd trimester,1479162,105497,7.1322140509288365,2
+lbw,pnc_timing,No PNC,640749,121953,19.03288183048276,3
+lbw,pnc_timing,Missing,750391,107627,14.342789292515501,99

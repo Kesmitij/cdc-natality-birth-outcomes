@@ -1,0 +1,22 @@
+{
+  "thesis": "Despite secular changes in overall U.S. birth outcomes over 2016\u20132024, the non-Hispanic Black\u2013White preterm disparity remained large and did not close; racial disparity in preterm birth is not explained by the available socioeconomic and care-timing covariates in the public-use file. From 2016 to 2024, the non-Hispanic Black\u2013White preterm birth rate ratio widened (RR 1.52 \u2192 1.56), with Black rates 14.86% vs White 9.51% in 2024. In multivariable logistic models, non-Hispanic Black identity retained elevated odds of preterm birth (OR 1.49, 95% CI 1.46\u20131.53) after adjustment for education, prenatal care timing, tobacco, obesity, diabetes, hypertension, plurality, payment source, age, and year. The absolute prenatal-care initiation gradient in preterm rates (15.09 percentage points between no care and first-trimester care) exceeded the education gradient (2.96 pp between lowest and highest education).",
+  "thesis_short": "Black\u2013White preterm RR stayed elevated through 2024 (\u22481.56) after multivariable adjustment.",
+  "years_label": "2016\u20132024",
+  "n_births": "33,511,275",
+  "rr_first": "1.52",
+  "rr_last": "1.56",
+  "diff_first": "4.70",
+  "diff_last": "5.35",
+  "black_rate_last": "14.86",
+  "white_rate_last": "9.51",
+  "preterm_first": "9.85",
+  "preterm_last": "10.41",
+  "lbw_first": "8.17",
+  "lbw_last": "8.52",
+  "cesarean_last": "32.38",
+  "nicu_last": "9.88",
+  "black_or": "1.49",
+  "black_or_ci": "1.46\u20131.53",
+  "edu_gap": "2.96",
+  "pnc_gap": "15.09"
+}

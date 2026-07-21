@@ -1,0 +1,62 @@
+{
+  "year": 2022,
+  "source_path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\raw\\extracted\\2022\\Nat2022PublicUS.c20230504.r20230822.txt",
+  "n_raw": 3676029,
+  "n_kept": 3667758,
+  "elapsed_sec": 138.75205421447754,
+  "max_rows": null,
+  "control_total": {
+    "year": 2022,
+    "n_kept": 3667758,
+    "expected": 3667758,
+    "rel_diff": 0.0,
+    "ok": true,
+    "note": "within tolerance"
+  },
+  "summary": {
+    "year": 2022,
+    "n_records": 3667758,
+    "preterm": {
+      "n": 3665087,
+      "events": 380548,
+      "rate": 0.10383055027070298
+    },
+    "lbw": {
+      "n": 3664768,
+      "events": 315288,
+      "rate": 0.08603218539345464
+    },
+    "vlbw": {
+      "n": 3664768,
+      "events": 49871,
+      "rate": 0.013608228406272922
+    },
+    "cesarean": {
+      "n": 3665029,
+      "events": 1178066,
+      "rate": 0.3214342915158379
+    },
+    "nicu": {
+      "n": 3660748,
+      "events": 347580,
+      "rate": 0.09494780848067116
+    },
+    "low_apgar5": {
+      "n": 3651658,
+      "events": 80004,
+      "rate": 0.021908952043154097
+    },
+    "infection": {
+      "n": 3649517,
+      "events": 96629,
+      "rate": 0.02647720232567762
+    },
+    "ab_anti": {
+      "n": 3660748,
+      "events": 68149,
+      "rate": 0.018616140745006213
+    }
+  },
+  "parquet": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\processed\\natality_analysis_2022.parquet",
+  "sample_csv": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\processed\\natality_analysis_2022_sample.csv"
+}

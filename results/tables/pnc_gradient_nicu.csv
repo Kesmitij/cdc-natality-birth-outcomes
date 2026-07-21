@@ -1,0 +1,6 @@
+outcome,stratifier,level,n,events,rate_per_100,pnc_order
+nicu,pnc_timing,1st trimester,25239142,2247045,8.903016592243905,0
+nicu,pnc_timing,2nd trimester,5358047,511380,9.544149202125327,1
+nicu,pnc_timing,3rd trimester,1478323,132798,8.983016566744887,2
+nicu,pnc_timing,No PNC,642579,130280,20.27454989970105,3
+nicu,pnc_timing,Missing,748553,111188,14.853724452376786,99

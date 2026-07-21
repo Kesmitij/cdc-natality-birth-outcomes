@@ -1,0 +1,33 @@
+# Raw bulk Natality microdata (download via scripts/download_natality.py)
+data/raw/**
+!data/raw/.gitkeep
+!data/raw/download_manifest.json
+!data/raw/README.md
+
+# Large processed frames (summaries committed under results/)
+data/processed/*.parquet
+data/processed/*_full.csv
+data/processed/*_sample.csv
+data/raw/extracted/
+tools/*.bin
+tools/7zdl.bin
+tools/Far/
+tools/arm64/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+*.part
+docs/userguides/*.pdf
+site/.quarto/
+_site/
+*.log
+.Rhistory
+.RData

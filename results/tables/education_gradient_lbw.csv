@@ -1,0 +1,8 @@
+outcome,stratifier,level,n,events,rate_per_100,education_order
+lbw,education,Less than HS,3997540,394507,9.868744277730805,0
+lbw,education,HS / GED,8644877,829141,9.591125472346222,1
+lbw,education,Some college,6274844,549438,8.756201747804408,2
+lbw,education,Associate,2756629,220276,7.9907742391159635,3
+lbw,education,Bachelor's,7040200,469669,6.6712451350813895,4
+lbw,education,Graduate,4266937,291282,6.826489352901156,5
+lbw,education,Missing,500922,53449,10.67012429080775,99

@@ -1,0 +1,6 @@
+outcome,stratifier,level,n,events,rate_per_100,pnc_order
+preterm,pnc_timing,1st trimester,25263841,2492341,9.8652497060918,0
+preterm,pnc_timing,2nd trimester,5363779,517516,9.648346809217903,1
+preterm,pnc_timing,3rd trimester,1480045,115500,7.803816775841275,2
+preterm,pnc_timing,No PNC,633524,158092,24.95438215442509,3
+preterm,pnc_timing,Missing,743720,130453,17.54060667993331,99

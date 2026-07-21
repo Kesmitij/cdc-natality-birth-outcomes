@@ -1,0 +1,75 @@
+[
+  {
+    "n_raw": 3956112,
+    "n_kept": 3945875,
+    "year": 2016,
+    "elapsed_sec": 184.35045528411865,
+    "year_counts": {
+      "2016": 3956112
+    },
+    "meta": {
+      "year": 2016,
+      "source_path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\raw\\extracted\\2016\\Nat2016PublicUS.c20170517.r20190620.txt",
+      "n_raw": 3956112,
+      "n_kept": 3945875,
+      "elapsed_sec": 184.35045528411865,
+      "max_rows": null,
+      "control_total": {
+        "year": 2016,
+        "n_kept": 3945875,
+        "expected": 3945875,
+        "rel_diff": 0.0,
+        "ok": true,
+        "note": "within tolerance"
+      },
+      "summary": {
+        "year": 2016,
+        "n_records": 3945875,
+        "preterm": {
+          "n": 3942421,
+          "events": 388218,
+          "rate": 0.09847197952730061
+        },
+        "lbw": {
+          "n": 3941357,
+          "events": 321839,
+          "rate": 0.08165690141745596
+        },
+        "vlbw": {
+          "n": 3941357,
+          "events": 55110,
+          "rate": 0.013982493846662456
+        },
+        "cesarean": {
+          "n": 3943384,
+          "events": 1258581,
+          "rate": 0.31916267855222824
+        },
+        "nicu": {
+          "n": 3941474,
+          "events": 344454,
+          "rate": 0.08739217866209444
+        },
+        "low_apgar5": {
+          "n": 3929858,
+          "events": 79354,
+          "rate": 0.020192587111290027
+        },
+        "infection": {
+          "n": 3936251,
+          "events": 103450,
+          "rate": 0.02628135248488981
+        },
+        "ab_anti": {
+          "n": 3941474,
+          "events": 92144,
+          "rate": 0.023378056026755474
+        }
+      },
+      "parquet": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\processed\\natality_analysis_2016.parquet",
+      "sample_csv": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\processed\\natality_analysis_2016_sample.csv",
+      "meta_path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\processed\\natality_analysis_2016_meta.json"
+    },
+    "n_records_returned": 3945875
+  }
+]

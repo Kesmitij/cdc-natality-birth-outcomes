@@ -1,0 +1,186 @@
+{
+  "source_portal": "https://www.cdc.gov/nchs/data_access/VitalStatsOnline.htm",
+  "ftp_base": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality",
+  "years_requested": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "nchs_control_totals": {
+    "2016": 3945875,
+    "2017": 3855500,
+    "2018": 3791712,
+    "2019": 3747540,
+    "2020": 3613647,
+    "2021": 3664292,
+    "2022": 3667758,
+    "2023": 3596017,
+    "2024": 3622673
+  },
+  "files": [
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2016us.zip",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\raw\\Nat2016us.zip",
+      "bytes": 248367974,
+      "sha256": "fc7103274263e97d0103bd125562ac98fadae6d17f5992123290f41b27eff01e",
+      "elapsed_sec": 14.792552471160889,
+      "skipped": false,
+      "year": 2016
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2017us.zip",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\raw\\Nat2017us.zip",
+      "bytes": 242776873,
+      "sha256": "24a19e1137cd44468e198300c729b7c40f4b88f8da0c08502934e463a0b9444d",
+      "elapsed_sec": 14.011051654815674,
+      "skipped": false,
+      "year": 2017
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2018us.zip",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\raw\\Nat2018us.zip",
+      "bytes": 228246064,
+      "sha256": "d1cba3693416697f16f55c0a032e50ce0f7a256afd80690afded06ebd295a1c6",
+      "elapsed_sec": 10.902055978775024,
+      "skipped": false,
+      "year": 2018
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2019us.zip",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\raw\\Nat2019us.zip",
+      "bytes": 226407903,
+      "sha256": "453080600d044766d4549d7ade90b06ae03d6f415844288dbbfd66f7765312b1",
+      "elapsed_sec": 18.533286809921265,
+      "skipped": false,
+      "year": 2019
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2020us.zip",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\raw\\Nat2020us.zip",
+      "bytes": 229997676,
+      "sha256": "0a4d0b50c89a65e83dd94086480ad32150da31be3a67fe528eb9fbb426b92a97",
+      "elapsed_sec": 12.329840898513794,
+      "skipped": false,
+      "year": 2020
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2021us.zip",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\raw\\Nat2021us.zip",
+      "bytes": 232756903,
+      "sha256": "3dea777017a63afce07f9da1b022142b94067b752ebd2d16af4da07291b2ae19",
+      "elapsed_sec": 13.852997064590454,
+      "skipped": false,
+      "year": 2021
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2022us.zip",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\raw\\Nat2022us.zip",
+      "bytes": 222103574,
+      "sha256": "d0b5c283e695e928c51f94aa55b02ed70c6a319bfb09eb95a994728d48416adc",
+      "elapsed_sec": 10.183295488357544,
+      "skipped": false,
+      "year": 2022
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2023us.zip",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\raw\\Nat2023us.zip",
+      "bytes": 229522736,
+      "sha256": "4474daab3475af096397e26ed5fdb541b1df59ee9b555fc0b31db84c44d83663",
+      "elapsed_sec": 12.132137298583984,
+      "skipped": false,
+      "year": 2023
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2024us.zip",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\data\\raw\\Nat2024us.zip",
+      "bytes": 231829759,
+      "sha256": "8ce1c61bc055b3327311985f918db5387ea6a1ed7d34b367afe30f468b92225a",
+      "elapsed_sec": 17.2555091381073,
+      "skipped": false,
+      "year": 2024
+    }
+  ],
+  "guides": [
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2016.pdf",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\docs\\userguides\\UserGuide2016.pdf",
+      "bytes": 1662449,
+      "sha256": "d8b58a0e422fdd364b93a2a523293673db2e3dea90e526141e5e91a8d91655ff",
+      "skipped": true,
+      "year": 2016
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2017.pdf",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\docs\\userguides\\UserGuide2017.pdf",
+      "bytes": 1430254,
+      "sha256": "be30837777af096f008f38a5949b2f115731ab1c9f6e2ad34884fea0af59b604",
+      "elapsed_sec": 0.4991576671600342,
+      "skipped": false,
+      "year": 2017
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2018-508.pdf",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\docs\\userguides\\UserGuide2018.pdf",
+      "bytes": 1750031,
+      "sha256": "98723925cb412301bed96d78e6de03ea4a3be6802a3f1061962dbf796ca5a595",
+      "skipped": true,
+      "year": 2018
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2019-508.pdf",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\docs\\userguides\\UserGuide2019.pdf",
+      "bytes": 1987016,
+      "sha256": "780fdc49088976934f520f06f61549f4a0dc38c830735abbf3e9f4796b4a868f",
+      "elapsed_sec": 0.48419857025146484,
+      "skipped": false,
+      "year": 2019
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2020.pdf",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\docs\\userguides\\UserGuide2020.pdf",
+      "bytes": 1463197,
+      "sha256": "52494052020cb8e28a6794b9087b2848ce180e5c5240a9e0146ed157a0fda245",
+      "skipped": true,
+      "year": 2020
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2021.pdf",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\docs\\userguides\\UserGuide2021.pdf",
+      "bytes": 1526526,
+      "sha256": "eebabdc2ce679de0ccea1b69aa41786979b9e8b99491bb64281a6f2d3565158f",
+      "elapsed_sec": 0.4816782474517822,
+      "skipped": false,
+      "year": 2021
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2022.pdf",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\docs\\userguides\\UserGuide2022.pdf",
+      "bytes": 1238199,
+      "sha256": "fa92a64befb4fa404e24b8c56548a0687b0b65a64cb4812073408d43afa8dec6",
+      "skipped": true,
+      "year": 2022
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2023.pdf",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\docs\\userguides\\UserGuide2023.pdf",
+      "bytes": 1775336,
+      "sha256": "1b6bde59483c1fc0c34391c1a4e28ad6b48e182663b06854d06319fbd55efa76",
+      "skipped": true,
+      "year": 2023
+    },
+    {
+      "url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2024.pdf",
+      "path": "C:\\Users\\kylee\\Python\\projects\\cdc-natality-birth-outcomes\\docs\\userguides\\UserGuide2024.pdf",
+      "bytes": 2298152,
+      "sha256": "7fb7ad1831c5021fc0b87b86d3713a00f733cc9d6ce183a597c9a63536d2fd88",
+      "skipped": true,
+      "year": 2024
+    }
+  ]
+}
