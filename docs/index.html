@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Persistent Black–White Preterm Disparities | CDC Natality Analysis</title>
+  <meta name="description" content="Black–White preterm RR stayed elevated through 2024 (≈1.56) after multivariable adjustment.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">CDC Natality Birth Outcomes</a>
+      <div class="nav-links">
+        <a href="#thesis">Thesis</a>
+        <a href="#findings">Findings</a>
+        <a href="#methods">Methods</a>
+        <a href="#results">Results</a>
+        <a href="#discussion">Discussion</a>
+        <a href="#limitations">Limitations</a>
+        <a href="#reproduce">Reproduce</a>
+        <a href="https://github.com/Kesmitij/cdc-natality-birth-outcomes">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="thesis">
+    <div class="hero-inner">
+      <p class="eyebrow">U.S. Birth Certificate Microdata · 2016–2024</p>
+      <h1>Birth outcomes and persistent disparities in CDC Natality public-use files</h1>
+      <div class="thesis-box">
+        <h2>Data-driven thesis</h2>
+        <p>Despite secular changes in overall U.S. birth outcomes over 2016–2024, the non-Hispanic Black–White preterm disparity remained large and did not close; racial disparity in preterm birth is not explained by the available socioeconomic and care-timing covariates in the public-use file. From 2016 to 2024, the non-Hispanic Black–White preterm birth rate ratio widened (RR 1.52 → 1.56), with Black rates 14.86% vs White 9.51% in 2024. In multivariable logistic models, non-Hispanic Black identity retained elevated odds of preterm birth (OR 1.49, 95% CI 1.46–1.53) after adjustment for education, prenatal care timing, tobacco, obesity, diabetes, hypertension, plurality, payment source, age, and year. The absolute prenatal-care initiation gradient in preterm rates (15.09 percentage points between no care and first-trimester care) exceeded the education gradient (2.96 pp between lowest and highest education).</p>
+      </div>
+      <div class="meta-row">
+        <span><strong>33,511,275</strong> U.S. births analyzed</span>
+        <span>Years <strong>2016–2024</strong></span>
+        <span>Source: <strong>NCHS / CDC Natality public-use</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="findings">
+      <h2>Key findings at a glance</h2>
+      <p class="lead">Headline quantities from the analysis-ready pipeline (complete-case rates per 100 births unless noted).</p>
+      <div class="grid-3">
+        <div class="stat-card">
+          <div class="label">Black–White preterm RR (latest year)</div>
+          <div class="value">1.56</div>
+          <div class="note">Started at 1.52 in first analysis year</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Preterm rate (latest)</div>
+          <div class="value">10.41%</div>
+          <div class="note">Was 9.85% in first year</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Adjusted OR (NH Black, preterm)</div>
+          <div class="value">1.49</div>
+          <div class="note">95% CI 1.46–1.53</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">LBW rate (latest)</div>
+          <div class="value">8.52%</div>
+          <div class="note">First year: 8.17%</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Cesarean rate (latest)</div>
+          <div class="value">32.38%</div>
+          <div class="note">Total cesarean among stated delivery method</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">NICU admission (latest)</div>
+          <div class="value">9.88%</div>
+          <div class="note">Among births with AB_NICU stated</div>
+        </div>
+      </div>
+
+      <figure class="figure"><img src="assets/yearly_trends.png" alt="Trends in major birth outcomes over the analysis window."><figcaption>Trends in major birth outcomes over the analysis window.</figcaption></figure>
+      <figure class="figure"><img src="assets/bw_gap_preterm.png" alt="Non-Hispanic Black vs White preterm rates and rate ratio by year."><figcaption>Non-Hispanic Black vs White preterm rates and rate ratio by year.</figcaption></figure>
+      <figure class="figure"><img src="assets/education_gradient_preterm.png" alt="Preterm birth by maternal education."><figcaption>Preterm birth by maternal education.</figcaption></figure>
+      <figure class="figure"><img src="assets/pnc_gradient_preterm.png" alt="Preterm birth by prenatal care initiation timing."><figcaption>Preterm birth by prenatal care initiation timing.</figcaption></figure>
+      <figure class="figure"><img src="assets/model_ors_preterm.png" alt="Adjusted odds ratios from multivariable logistic model of preterm birth."><figcaption>Adjusted odds ratios from multivariable logistic model of preterm birth.</figcaption></figure>
+    </section>
+
+    <section id="methods">
+      <h2>Methods summary</h2>
+      <p>
+        We analyze official <strong>CDC / NCHS Natality U.S. public-use microdata</strong>
+        (not territory files) for years with the 2003 revised certificate fully in effect.
+        Fixed-width records are parsed using positions from the NCHS User Guides
+        (<code>src/natality/layouts.py</code>). Outcomes and covariates are constructed with
+        explicit missing/“not stated” rules (<code>src/natality/variables.py</code>).
+      </p>
+      <h3>Outcomes</h3>
+      <ul class="clean">
+        <li>Preterm birth (&lt;37 weeks, obstetric estimate preferred)</li>
+        <li>Low birth weight (&lt;2500 g) and very low birth weight (&lt;1500 g)</li>
+        <li>Cesarean delivery (total; low-risk nulliparous term singleton proxy)</li>
+        <li>NICU admission; low 5-minute Apgar (&lt;7)</li>
+        <li>Neonatal antibiotics; maternal infections present/treated</li>
+      </ul>
+      <h3>Analysis</h3>
+      <ul class="clean">
+        <li>Descriptive year trends and stratified rates (race/ethnicity, education, prenatal care, payment, clinical factors)</li>
+        <li>Black–White rate ratios and absolute differences by year</li>
+        <li>Multivariable logistic regression with complete-case analysis; ORs and 95% CIs saved under <code>results/models/</code></li>
+      </ul>
+      <p>Full methods: <a href="../paper/paper.md">research paper</a> · <a href="../docs/VARIABLES.md">variable dictionary</a> · <a href="../docs/DATA_PROVENANCE.md">data provenance</a>.</p>
+    </section>
+
+    <section id="results">
+      <h2>Main results tables</h2>
+      <h3>Yearly trends (excerpt)</h3>
+      <div class="table-wrap"><table><thead><tr><th>year</th><th>n_births</th><th>preterm_rate</th><th>lbw_rate</th><th>cesarean_rate</th><th>nicu_rate</th><th>low_apgar5_rate</th></tr></thead><tbody><tr><td>2016</td><td>3945875</td><td>9.847197952730061</td><td>8.165690141745596</td><td>31.916267855222824</td><td>8.739217866209444</td><td>2.0192587111290026</td></tr><tr><td>2017</td><td>3855500</td><td>9.933862670758298</td><td>8.27704517951729</td><td>31.98098589045529</td><td>8.980345102942108</td><td>2.012524317546542</td></tr><tr><td>2018</td><td>3791712</td><td>10.022603685997458</td><td>8.281082564836174</td><td>31.876581724081888</td><td>9.154775285496097</td><td>1.9964424608554192</td></tr><tr><td>2019</td><td>3747540</td><td>10.228232154043086</td><td>8.313451955622414</td><td>31.677132731633613</td><td>9.3289681166109</td><td>2.0678962159602103</td></tr><tr><td>2020</td><td>3613647</td><td>10.093324350092725</td><td>8.242348373016643</td><td>31.805661541324113</td><td>9.339335429449978</td><td>2.1023559726363015</td></tr><tr><td>2021</td><td>3664292</td><td>10.48750443831426</td><td>8.520495028491153</td><td>32.079113978501674</td><td>9.615074490690098</td><td>2.182946540577053</td></tr><tr><td>2022</td><td>3667758</td><td>10.383055027070299</td><td>8.603218539345464</td><td>32.143429151583796</td><td>9.494780848067116</td><td>2.1908952043154097</td></tr><tr><td>2023</td><td>3596017</td><td>10.405315337252583</td><td>8.579300003172746</td><td>32.334204190131004</td><td>9.800965765821987</td><td>2.2446893149035407</td></tr><tr><td>2024</td><td>3628934</td><td>10.407129083727114</td><td>8.52098806902815</td><td>32.37914296988612</td><td>9.881636596105833</td><td>2.266793656666712</td></tr></tbody></table></div>
+
+      <h3>Black–White preterm gap by year</h3>
+      <div class="table-wrap"><table><thead><tr><th>year</th><th>white_rate</th><th>black_rate</th><th>rate_ratio</th><th>rate_diff_pp</th><th>white_n</th><th>black_n</th></tr></thead><tbody><tr><td>2016</td><td>9.065912675869507</td><td>13.761502127160481</td><td>1.517938967555809</td><td>4.695589451290974</td><td>2080662</td><td>562722</td></tr><tr><td>2017</td><td>9.080284792601551</td><td>13.917757658193771</td><td>1.5327446193685141</td><td>4.83747286559222</td><td>2013395</td><td>564624</td></tr><tr><td>2018</td><td>9.113171040151755</td><td>14.124197294712392</td><td>1.5498663673141366</td><td>5.011026254560637</td><td>1976875</td><td>556244</td></tr><tr><td>2019</td><td>9.283260417876548</td><td>14.389270294625376</td><td>1.5500233373736139</td><td>5.1060098767488284</td><td>1937175</td><td>552634</td></tr><tr><td>2020</td><td>9.122401971517752</td><td>14.349626430705843</td><td>1.573009660778893</td><td>5.227224459188092</td><td>1863336</td><td>534439</td></tr><tr><td>2021</td><td>9.52160730643351</td><td>14.743568887213181</td><td>1.548432781643003</td><td>5.221961580779672</td><td>1909331</td><td>522499</td></tr><tr><td>2022</td><td>9.45876777302094</td><td>14.57871665571266</td><td>1.5412913188645196</td><td>5.11994888269172</td><td>1861881</td><td>515793</td></tr><tr><td>2023</td><td>9.46838153162179</td><td>14.648030516057846</td><td>1.547046923187184</td><td>5.1796489844360565</td><td>1806634</td><td>495739</td></tr><tr><td>2024</td><td>9.505900956195532</td><td>14.857628701685169</td><td>1.5629900595589115</td><td>5.351727745489637</td><td>1803606</td><td>477519</td></tr></tbody></table></div>
+
+      <h3>Education gradient — preterm</h3>
+      <div class="table-wrap"><table><thead><tr><th>level</th><th>n</th><th>events</th><th>rate_per_100</th></tr></thead><tbody><tr><td>Less than HS</td><td>3996122</td><td>458223</td><td>11.466691957853138</td></tr><tr><td>HS / GED</td><td>8645337</td><td>962277</td><td>11.13058981969124</td></tr><tr><td>Some college</td><td>6276233</td><td>678645</td><td>10.812935083831336</td></tr><tr><td>Associate</td><td>2757497</td><td>286839</td><td>10.402150936156957</td></tr><tr><td>Bachelor's</td><td>7042824</td><td>599281</td><td>8.509100894754718</td></tr><tr><td>Graduate</td><td>4268722</td><td>364657</td><td>8.542533339018094</td></tr><tr><td>Missing</td><td>498174</td><td>63980</td><td>12.842902279123358</td></tr></tbody></table></div>
+
+      <h3>Prenatal care gradient — preterm</h3>
+      <div class="table-wrap"><table><thead><tr><th>level</th><th>n</th><th>events</th><th>rate_per_100</th></tr></thead><tbody><tr><td>1st trimester</td><td>25263841</td><td>2492341</td><td>9.8652497060918</td></tr><tr><td>2nd trimester</td><td>5363779</td><td>517516</td><td>9.648346809217903</td></tr><tr><td>3rd trimester</td><td>1480045</td><td>115500</td><td>7.803816775841275</td></tr><tr><td>No PNC</td><td>633524</td><td>158092</td><td>24.95438215442509</td></tr><tr><td>Missing</td><td>743720</td><td>130453</td><td>17.54060667993331</td></tr></tbody></table></div>
+
+      <h3>Logistic model coefficients (preterm)</h3>
+      <div class="table-wrap"><table><thead><tr><th>term</th><th>or</th><th>ci_low</th><th>ci_high</th><th>pvalue</th></tr></thead><tbody><tr><td>const</td><td>0.18319384285589163</td><td>0.17571989564304738</td><td>0.1909856817151881</td><td>0.0</td></tr><tr><td>maternal_age</td><td>1.0169131208020064</td><td>1.0155631453276652</td><td>1.0182648907819771</td><td>3.475265905380662e-135</td></tr><tr><td>year_c</td><td>1.0032060730561678</td><td>1.0004391710654854</td><td>1.0059806274327696</td><td>0.023113474394255863</td></tr><tr><td>tobacco</td><td>1.4742604574093432</td><td>1.430284535865435</td><td>1.5195884747266044</td><td>2.8569661226882513e-139</td></tr><tr><td>obesity</td><td>1.0153002709725705</td><td>0.9993622807870648</td><td>1.031492442785737</td><td>0.05997975657159842</td></tr><tr><td>diabetes</td><td>1.4727319336171718</td><td>1.4387032180003345</td><td>1.5075655084099975</td><td>4.3554978663672045e-231</td></tr><tr><td>hypertension</td><td>2.995692694351295</td><td>2.938719745669368</td><td>3.053770177375532</td><td>0.0</td></tr><tr><td>multiple</td><td>18.451895564690226</td><td>17.825659667082565</td><td>19.10013184863852</td><td>0.0</td></tr><tr><td>race_eth_Hispanic</td><td>1.0969261501657819</td><td>1.0762992829606013</td><td>1.117948323451191</td><td>1.277670065930206e-21</td></tr><tr><td>race_eth_NH AIAN</td><td>1.134487846972185</td><td>1.0478560497811915</td><td>1.228281952655942</td><td>0.0018496404087551491</td></tr><tr><td>race_eth_NH Asian</td><td>1.1240640494673841</td><td>1.0892612276888218</td><td>1.1599788509740052</td><td>3.1428964162714795e-13</td></tr><tr><td>race_eth_NH Black</td><td>1.4936593076895015</td><td>1.46276147474016</td><td>1.5252097939233678</td><td>9.6727448009108e-310</td></tr><tr><td>race_eth_NH Multiracial</td><td>1.1249881685730931</td><td>1.0732781817999961</td><td>1.1791895157198722</td><td>9.316528760390463e-07</td></tr><tr><td>race_eth_NH NHOPI</td><td>1.2375963738124511</td><td>1.0812325685799011</td><td>1.4165729270303076</td><td>0.00197956846995132</td></tr><tr><td>education_Associate</td><td>0.8775470784840054</td><td>0.8527353968285726</td><td>0.9030806951603837</td><td>4.402596207844744e-19</td></tr><tr><td>education_Bachelor's</td><td>0.7380636037599883</td><td>0.7204759192752369</td><td>0.7560806247947334</td><td>1.652472370802525e-134</td></tr><tr><td>education_Graduate</td><td>0.719446169293765</td><td>0.699048599803487</td><td>0.740438920351144</td><td>1.6563932556464594e-111</td></tr><tr><td>education_Less than HS</td><td>1.081879423956919</td><td>1.0560128218482663</td><td>1.1083796179034777</td><td>1.840804009833029e-10</td></tr><tr><td>education_Some college</td><td>0.9440322216402811</td><td>0.9243563445796659</td><td>0.9641269200140994</td><td>8.347825054898836e-08</td></tr><tr><td>pnc_timing_2nd trimester</td><td>0.9012901605832392</td><td>0.8835979908535543</td><td>0.9193365783680172</td><td>9.168916512537413e-25</td></tr><tr><td>pnc_timing_3rd trimester</td><td>0.7573099163326055</td><td>0.7295339924638801</td><td>0.786143367273038</td><td>3.7197260114318556e-48</td></tr><tr><td>pnc_timing_No PNC</td><td>3.10110348338152</td><td>2.96878939578063</td><td>3.2393145934530962</td><td>0.0</td></tr><tr><td>payment_Medicaid</td><td>1.090196892171569</td><td>1.0706039206680655</td><td>1.1101484318858985</td><td>1.0284250842244869e-20</td></tr><tr><td>payment_Other</td><td>1.0441437579605444</td><td>1.0038723856424236</td><td>1.0860306577616197</td><td>0.031353594690605675</td></tr><tr><td>payment_Self-pay</td><td>0.8319292401594963</td><td>0.7990809627379892</td><td>0.8661278304777882</td><td>3.4780927206355504e-19</td></tr></tbody></table></div>
+    </section>
+
+    <section id="discussion">
+      <h2>What the data show</h2>
+      <p>
+        The quantitative pattern that organizes this project is the <strong>persistence of the
+        non-Hispanic Black–White preterm disparity</strong> across the full analysis window,
+        alongside clear socioeconomic and care-timing gradients. Overall national rates move,
+        but the relative Black–White gap in preterm birth remains large.
+      </p>
+      <p>
+        Multivariable models that simultaneously adjust for education, prenatal care initiation,
+        tobacco, obesity, diabetes, hypertension, plurality, payment source, maternal age, and year
+        still leave a substantial association between NH Black identity and preterm birth
+        (adjusted OR 1.49, 95% CI 1.46–1.53). That is the
+        falsifiable core of the thesis: if compositional differences in the measured covariates
+        fully explained the disparity, the adjusted association would attenuate to the null —
+        it does not in these public-use specifications.
+      </p>
+      <p>
+        Education and prenatal-care timing both show monotonic gradients in unadjusted preterm
+        rates (absolute spans of roughly 2.96 and 15.09 percentage points
+        respectively). These gradients matter clinically and for targeting, but they do not
+        erase the race/ethnicity association in the joint model.
+      </p>
+    </section>
+
+    <section id="limitations">
+      <h2>Limitations</h2>
+      <div class="callout limit">
+        <ul class="clean">
+          <li><strong>No geography in public-use files after 2004.</strong> State/county identifiers are suppressed; we cannot analyze place, segregation, or hospital markets.</li>
+          <li>Cross-sectional birth certificates: associations are not causal effects of race, education, or prenatal care.</li>
+          <li>Self-reported and facility-reported items vary in completeness; “not stated” codes are excluded from complete-case rates/models.</li>
+          <li>Low-risk cesarean is an NTSV-style proxy without full presentation/prior obstetric detail available on all records.</li>
+          <li>For computational feasibility on multi-million-row files, logistic models may use documented outcome-stratified samples; descriptives use the full analysis-ready extract.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="reproduce">
+      <h2>Reproducibility</h2>
+      <div class="callout repro">
+        <p>Repository: <a href="https://github.com/Kesmitij/cdc-natality-birth-outcomes">github.com/Kesmitij/cdc-natality-birth-outcomes</a></p>
+        <pre>py -3.12 -m pip install -r requirements.txt
+py -3.12 scripts/download_natality.py --years 2016-2024 --guides
+py -3.12 scripts/process_all_years.py --years 2016-2024 --cleanup
+py -3.12 scripts/run_analysis.py
+py -3.12 scripts/build_site.py
+py -3.12 scripts/build_paper.py
+py -3.12 -m pytest -q</pre>
+        <p>Raw zips are gitignored (~230&nbsp;MB each). Checksums live in <code>data/raw/download_manifest.json</code>.
+        Derived tables and model JSON under <code>results/</code> are committed so the site and paper rebuild without multi-GB downloads.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <p>Analysis of public NCHS/CDC Natality microdata. Not affiliated with CDC/NCHS.
+      Code and paper: <a href="https://github.com/Kesmitij/cdc-natality-birth-outcomes">GitHub repository</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
